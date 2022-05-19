@@ -1,0 +1,53 @@
+
+#img-Div{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: end;
+    /* background-image: url('./nopic.jpg'); */
+    background-image: url(https://www.willmaster.com/library/images/background-sample-250.jpg);
+    background-repeat: repeat-x;
+
+}
+
+
+
+
+
+   
+
+
+
+
+
+
+
+#profile-pic{
+
+    border:4px solid rgba(0,0,0,0.5);
+    border-radius: 18%;
+    width:250px;
+    height:250px;
+    position: relative;
+    transform: translate(0%,10px);
+}
+
+#profile-pic-btn{
+
+    width:80px;
+    height:80px;
+    top:0px;
+    left:0px;
+    position:relative;
+    transform: translate(180px,-50px); 
+    /* background-color: red; */
+
+}
+
+#svg-circle{
+stroke: black;
+stroke-width: 2%;
+fill:rgb(150, 132, 132);
+
+}

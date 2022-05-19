@@ -1,0 +1,80 @@
+#homeNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+    height:4em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#navBtns{
+    display: flex;
+    gap:1em;
+    height: 100%;
+}
+
+
+
+
+#profile{
+    /* background-color: red; */
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 10%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#messages{
+    /* background-color: yellow; */
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 10%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#settings{
+    /* background-color: blue; */
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 10%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#signout{
+    /* background-color: green; */
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 10%;
+    padding-left: 1em;
+    padding-right: 1em;
+} 
+
+
+
+
+
+#profile:hover{
+    background-color: rgb(125, 125, 43);
+}
+
+#messages:hover{
+    background-color: rgb(125, 125, 43);
+}
+
+#settings:hover{
+    background-color: rgb(125, 125, 43);
+}
+
+#signout:hover{
+    background-color: rgb(125, 125, 43);
+}
