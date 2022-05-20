@@ -19,19 +19,24 @@ const AuthRoute: React.FunctionComponent<Props>  = (props) => {
     const [loading, setLoading]= useState(false);
 
 
-    const AuthCheck= onAuthStateChanged(auth, (user)=>{
-        // console.log(children);
-        if(user || show){
-            setLoading(false)
-        }else{
-            console.log('unauthorized')
-            navigate('/Login')
-        }
-    })
+
 
 
 
     useEffect(()=>{
+
+        const AuthCheck= onAuthStateChanged(auth, (user)=>{
+            // console.log(children);
+            if(user || show){
+                setLoading(false)
+            }else{
+                console.log('unauthorized')
+                navigate('/Login')
+            }
+        })
+
+
+
         AuthCheck();
         return ()=>AuthCheck();
     },[auth])

@@ -36,6 +36,7 @@ import {
   useNavigate 
 } from 'react-router-dom';
 
+import Register2 from './pages/register2/Register2';
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
@@ -68,8 +69,28 @@ function App() {
             >
               <Register/>
             </AuthRoute>
+            
           
           } />
+
+
+
+
+          <Route 
+          path="Register2" 
+          element={
+
+            <AuthRoute 
+            show={true}
+            >
+              <Register2/>
+            </AuthRoute>
+            
+          
+          } />
+
+
+
 
           <Route path="Login" element={<Login/>} />
         </Routes>
