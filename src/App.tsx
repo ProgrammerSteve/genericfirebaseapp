@@ -17,8 +17,8 @@ import {
 } from 'react-bootstrap';
 
 
-import { auth } from './firebase-config';
-import { initializeApp } from "firebase/app";
+import { auth } from './firebase-utils';
+
 import AuthRoute from './components/AuthRoute/AuthRoute';
 
 
@@ -73,9 +73,6 @@ function App() {
           
           } />
 
-
-
-
           <Route 
           path="Register2" 
           element={
@@ -85,12 +82,7 @@ function App() {
             >
               <Register2/>
             </AuthRoute>
-            
-          
           } />
-
-
-
 
           <Route path="Login" element={<Login/>} />
         </Routes>

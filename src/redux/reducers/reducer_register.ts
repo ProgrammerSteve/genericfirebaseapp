@@ -6,6 +6,7 @@ import {
     CHANGE_REGISTER_NAME,
     CHANGE_REGISTER_BIRTHDAY,
     CHANGE_REGISTER_JOINED,
+    RESET_REGISTER,
   } from "../constants";
 
   interface Iaction {
@@ -56,6 +57,9 @@ export const registerReducer=(state:IstateRegister=initialStateRegister,action:I
 
         case CHANGE_REGISTER_JOINED:
             return Object.assign({},state, {R_Joined: action.payload});
+            
+        case RESET_REGISTER:
+            return Object.assign({},state, initialStateRegister);
 
     default:
         return state;

@@ -1,5 +1,5 @@
 import React from 'react'
-import {auth} from '../../firebase-config';
+import {auth} from '../../firebase-utils';
 import {signOut} from 'firebase/auth';
 import './NavBar.css';
 

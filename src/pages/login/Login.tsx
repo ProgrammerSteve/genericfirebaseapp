@@ -19,7 +19,7 @@ import {
     Link
   } from 'react-router-dom';
 
-  import {auth} from '../../firebase-config';
+  import {auth} from '../../firebase-utils';
 
 
 
@@ -44,6 +44,7 @@ function Login() {
         setAuthing(true);
         signInWithPopup(auth, new GoogleAuthProvider())
         .then(resp=>{
+            console.log(resp);
             console.log(resp.user.uid);
             navigate('/')
         })

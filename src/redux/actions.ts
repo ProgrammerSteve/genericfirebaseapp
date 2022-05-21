@@ -7,6 +7,7 @@ import {
     CHANGE_REGISTER_NAME,
     CHANGE_REGISTER_BIRTHDAY,
     CHANGE_REGISTER_JOINED,
+    RESET_REGISTER,
 
     //Navigation constants
     CHANGE_NAVIGATION,
@@ -50,6 +51,10 @@ const setJoined=(text:string)=>({
   payload: text
 })
 
+const resetRegister=()=>({
+  type: RESET_REGISTER,
+  payload: ''
+})
 
 export {
   setNavigation,
@@ -59,5 +64,6 @@ export {
   setUsername,
   setName,
   setBirthday,
-  setJoined
+  setJoined,
+  resetRegister,
 }

@@ -25,7 +25,7 @@ import "./Home.css";
 
 
 import{getAuth, signOut} from 'firebase/auth';
-import {auth} from '../../firebase-config';
+import {auth} from '../../firebase-utils';
 
 
 import NavBar from '../../components/NavBar/NavBar';

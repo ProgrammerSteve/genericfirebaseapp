@@ -23,7 +23,6 @@ const Profile = () => {
 
   return( 
     <div>
-        
     
         <div id="img-Div">
             <img id="profile-pic" src={`${url}`}/> 
@@ -32,12 +31,9 @@ const Profile = () => {
             </svg>
         </div>
 
- 
-
 <br/>
 <br/>
 <div  style={{marginInline:'auto'}}><h1>Profile</h1></div>
-
 
     <Container>
             <Row>
