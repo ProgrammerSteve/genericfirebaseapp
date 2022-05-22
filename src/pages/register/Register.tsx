@@ -84,87 +84,60 @@ const Register=()=> {
 
 
     return(
-        <>
+        <>     
+        <div id='Register-Bg-Div'>
+            <div id="Register-Larger-Container">
+                <div id="Register-Container">
+                        <Form onSubmit={handleForm}>
+                            <h1>Register</h1><br/>
 
-                    
-        <div
-        id='Register-Bg-Div'
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control 
+                                    type="email" 
+                                    placeholder="Enter email" 
+                                    onChange={e=>dispatch(setEmail(e.target.value))} 
+                                />
+                                {/* <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                                </Form.Text> */}
+                            </Form.Group>
 
-        >
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control 
+                                    type="password" 
+                                    placeholder="Password" 
+                                    onChange={e=>dispatch(setPass(e.target.value))} 
+                                />
+                            </Form.Group>
 
-        <div onClick={()=>navigate('/')}>Home</div>
-        <div onClick={()=>navigate('/Login')}>Login</div>
-        <div onClick={()=>navigate('/Register')}>Register</div>   
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Confirm Password</Form.Label>
+                                <Form.Control 
+                                    type="password" 
+                                    placeholder="Password"
+                                    onChange={e=>dispatch(setConfirm(e.target.value))} 
+                                />
+                            </Form.Group>
 
-        <div
-            id="Register-Container"
-        >
-            
-                <Form onSubmit={handleForm}>
-                    <h1>Register</h1><br/>
+                            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="Check me out" />
+                            </Form.Group> */}
 
-
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control 
-                            type="email" 
-                            placeholder="Enter email" 
-                            onChange={e=>dispatch(setEmail(e.target.value))} 
-                        />
-                        {/* <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                        </Form.Text> */}
-                    </Form.Group>
-
-
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control 
-                            type="password" 
-                            placeholder="Password" 
-                            onChange={e=>dispatch(setPass(e.target.value))} 
-                        />
-                    </Form.Group>
-
-
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control 
-                            type="password" 
-                            placeholder="Password"
-                            onChange={e=>dispatch(setConfirm(e.target.value))} 
-                        />
-                    </Form.Group>
-
-
-                    {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group> */}
-
-                    <Button 
-                        variant="primary" 
-                        type="submit"
-                        // onClick={handleRegister}
-                        onClick={()=>navigate('/Register2')}
-                    >
-                        Continue
-                    </Button>
-
-
-                </Form> 
-
-            
+                            <Button 
+                                variant="primary" 
+                                type="submit"
+                                // onClick={handleRegister}
+                                onClick={()=>navigate('/Register2')}
+                            >
+                                Continue
+                            </Button>
+                        </Form> 
+                </div>
+                <div id="Register-Link" onClick={()=>navigate('/Login')}>[Back to Login]</div>
+            </div>
         </div>
-
-
-
-        </div>
-        <p>Email: {`${Email}`}  Pass: {`${Pass}`}  Confirm: {`${Confirm}`}</p><br/>
-        <p>Username: {`${Username}`}  Name: {`${Name}`}  Birthday: {`${Birthday}`}</p><br/>
-        <p>Joined: {`${Joined}`}</p><br/>
-                
         </>
     )
 

@@ -14,11 +14,8 @@ const AuthRoute: React.FunctionComponent<Props>  = (props) => {
         children,
     }=props;
 
-
     const navigate=useNavigate();
     const [loading, setLoading]= useState(true);
-
-
 
     const AuthCheck=useCallback(
         ()=>{
@@ -28,19 +25,17 @@ const AuthRoute: React.FunctionComponent<Props>  = (props) => {
                     setLoading(false)
                 }else{
                     setLoading(true)
-                    console.log('unauthorized')
+                    // console.log('unauthorized')
                     navigate('/Login')
                 }
             })
         },[auth]
     )
 
-
     useEffect(()=>{
         AuthCheck();
         return ()=>AuthCheck();
     },[AuthCheck])
-
 
     if(loading) return<p>Loading...</p>;
     return <>{children}</>

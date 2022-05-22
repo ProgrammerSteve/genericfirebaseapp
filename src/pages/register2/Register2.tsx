@@ -122,59 +122,75 @@ const handleSubmit= async (event:React.SyntheticEvent)=>{
     return(
         <>        
         <div id='Register2-Bg-Div'>
-        <div onClick={()=>navigate('/')}>Home</div>
-        <div onClick={()=>navigate('/Login')}>Login</div>
-        <div onClick={()=>navigate('/Register')}>Register</div>   
-        <div id="Register2-Container">
-                <Form onSubmit={handleSubmit}>
-                    <h1>Profile Details</h1><br/>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control 
-                            type="text" 
-                            placeholder="Enter username" 
-                            onChange={e=>dispatch(setUsername(e.target.value))} 
-                        />
-                        {/* <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                        </Form.Text> */}
-                    </Form.Group>
+            <div id="Register2-Larger-Container">
+                <div id="Register2-Container">
+                    <Form onSubmit={handleSubmit}>
+                        <h1>Profile Details</h1><br/>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Username</Form.Label>
+                            <Form.Control 
+                                type="text" 
+                                placeholder="Enter username" 
+                                onChange={e=>dispatch(setUsername(e.target.value))} 
+                            />
+                            {/* <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                            </Form.Text> */}
+                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control 
-                            type="text" 
-                            placeholder="Name" 
-                            onChange={e=>dispatch(setName(e.target.value))} 
-                        />
-                    </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control 
+                                type="text" 
+                                placeholder="Name" 
+                                onChange={e=>dispatch(setName(e.target.value))} 
+                            />
+                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Birthday</Form.Label>
-                        <Form.Control 
-                            type="text" 
-                            placeholder="Birthday"
-                            onChange={e=>dispatch(setBirthday(e.target.value))} 
-                        />
-                    </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Birthday</Form.Label>
+                            <Form.Control 
+                                type="text" 
+                                placeholder="Birthday"
+                                onChange={e=>dispatch(setBirthday(e.target.value))} 
+                            />
+                        </Form.Group>
 
-                    {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group> */}
+                        {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                        </Form.Group> */}
 
-                    <Button 
-                        variant="primary" 
-                        type="submit"
-                    >
-                        Register
-                    </Button>
-                </Form> 
+
+                        <div id="Register2-Button-Container">
+                            <Button 
+                                variant="primary" 
+                                onClick={()=>navigate('/Register')}
+                            >
+                                Back
+                            </Button>
+
+
+                            <Button 
+                                variant="primary" 
+                                type="submit"
+                            >
+                                Register
+                            </Button>
+                        </div>
+
+
+                    </Form> 
+                </div>
+                <div id="Register2-Link" onClick={()=>navigate('/Login')}>[Back to Login]</div>
+            </div>
         </div>
 
-        </div>
-        <p>Email: {`${Email}`}  Pass: {`${Pass}`}  Confirm: {`${Confirm}`}</p><br/>
-        <p>Username: {`${Username}`}  Name: {`${Name}`}  Birthday: {`${Birthday}`}</p><br/>
-        <p>Joined: {`${Joined}`}</p><br/>
+
+
+
+
+        {/* <div onClick={()=>navigate('/')}>Home</div>
+        <div onClick={()=>navigate('/Register')}>Register</div>   */}
         </>
     )
 

@@ -1,0 +1,52 @@
+import { 
+    CHANGE_PROFILE_EMAIL,
+    CHANGE_PROFILE_USERNAME,
+    CHANGE_PROFILE_NAME,
+    CHANGE_PROFILE_BIRTHDAY,
+    CHANGE_PROFILE_JOINED,
+  } from "../constants";
+
+  interface Iaction {
+    type?: string;
+    payload?:string;
+  }
+
+interface IstateProfile{
+    P_Email:string;
+    P_Username:string;
+    P_Name:string;
+    P_Birthday:string;
+    P_Joined:string;
+}
+const initialStateProfile:IstateProfile={
+  P_Email:'',
+  P_Username:'',
+  P_Name:'',
+  P_Birthday:'',
+  P_Joined:'',
+}
+
+export const profileReducer=(state:IstateProfile=initialStateProfile,action:Iaction={})=>{
+    switch(action.type){
+
+        case CHANGE_PROFILE_EMAIL:
+            return Object.assign({},state, {R_Email: action.payload});
+
+        case CHANGE_PROFILE_USERNAME:
+            return Object.assign({},state, {R_Pass: action.payload});
+
+        case CHANGE_PROFILE_NAME:
+            return Object.assign({},state, {R_Confirm: action.payload});
+
+        case CHANGE_PROFILE_BIRTHDAY:
+            return Object.assign({},state, {R_Username: action.payload});
+
+        case CHANGE_PROFILE_JOINED:
+            return Object.assign({},state, {R_Name: action.payload});
+
+    default:
+        return state;
+    }
+  }
+
+

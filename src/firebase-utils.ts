@@ -19,6 +19,7 @@ import {
     signInWithPopup, 
     signInWithRedirect,
     createUserWithEmailAndPassword,
+    Auth,
 } from 'firebase/auth';
 import { isAnyOf } from '@reduxjs/toolkit';
 
