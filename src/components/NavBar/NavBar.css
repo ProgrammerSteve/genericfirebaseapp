@@ -1,64 +1,153 @@
-#homeNav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: beige;
-    height:4em;
-    width: 100%;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 1%;
-    padding-bottom: 1%;
+
+
+
+
+
+@media screen and (max-width: 400px) {
+    #homeNav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: beige;
+        height:4em;
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    
+    #navBtns{
+        display: flex;
+        gap:0.3em;
+        height: 100%;
+    }
+    
+    
+    
+    
+
+    #profile{
+        /* background-color: red; */
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 10px;
+    }
+
+    #messages{
+        /* background-color: yellow; */
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 10px;
+    }
+
+    #settings{
+        /* background-color: blue; */
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 10px;
+    }
+
+    #signout{
+        /* background-color: green; */
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 10px;
+    } 
 }
 
-#navBtns{
-    display: flex;
-    gap:1em;
-    height: 100%;
+
+
+
+
+@media screen and (min-width: 401px) {
+    #homeNav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: beige;
+        height:4em;
+        width: 100%;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    
+    #navBtns{
+        display: flex;
+        gap:0.5em;
+        height: 100%;
+    }
+    
+    
+    
+    
+
+    #profile{
+        /* background-color: red; */
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 15px;
+    }
+
+    #messages{
+        /* background-color: yellow; */
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 15px;
+    }
+
+    #settings{
+        /* background-color: blue; */
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 15px;
+    }
+
+    #signout{
+        /* background-color: green; */
+        height: 100%;
+        display: grid;
+        place-items: center;
+        border-radius: 10%;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 15px;
+    } 
 }
 
 
 
 
-#profile{
-    /* background-color: red; */
-    height: 100%;
-    display: grid;
-    place-items: center;
-    border-radius: 10%;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-#messages{
-    /* background-color: yellow; */
-    height: 100%;
-    display: grid;
-    place-items: center;
-    border-radius: 10%;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-#settings{
-    /* background-color: blue; */
-    height: 100%;
-    display: grid;
-    place-items: center;
-    border-radius: 10%;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-#signout{
-    /* background-color: green; */
-    height: 100%;
-    display: grid;
-    place-items: center;
-    border-radius: 10%;
-    padding-left: 1em;
-    padding-right: 1em;
-} 
 
 
 

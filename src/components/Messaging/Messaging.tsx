@@ -42,8 +42,11 @@ const Messaging = () => {
     return(
         <div>
 
-            <p>{profile_uid}</p>
-            <div id="MessagingDiv"></div>
+            
+            <div id="MessagingDiv">
+                <p>{profile_uid}</p>
+                
+            </div>
 
 
 
