@@ -9,6 +9,17 @@ import {
 } from 'react-bootstrap';
 
 
+import{
+    setProfileEmail,
+    setProfileUsername,
+    setProfileName,
+    setProfileBirthday,
+    setProfileJoined,
+  } from '../../redux/actions/actions-pro';
+
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+
+
 interface Props {}
 
 const Profile = () => {
@@ -20,6 +31,12 @@ const Profile = () => {
 
 
 
+  const dispatch=useAppDispatch();
+  const profileEmail=useAppSelector((state)=>state.pro.P_Email);
+  const profileUsername=useAppSelector((state)=>state.pro.P_Username);
+  const profileName=useAppSelector((state)=>state.pro.P_Name);
+  const profileBirthday=useAppSelector((state)=>state.pro.P_Birthday);
+  const profileJoined=useAppSelector((state)=>state.pro.P_Joined);
 
 
 
@@ -44,23 +61,23 @@ const Profile = () => {
                 <Col>
                     <Row>
                         <Col>Username:</Col>
-                        <Col>null</Col>
+                        <Col>{profileUsername}</Col>
                     </Row>
                     <Row>
                         <Col>Name:</Col>
-                        <Col>null</Col>
+                        <Col>{profileName}</Col>
                     </Row>
                     <Row>
                         <Col>Email:</Col>
-                        <Col>null</Col>
+                        <Col>{profileEmail}</Col>
                     </Row>
                     <Row>
                         <Col>Joined:</Col>
-                        <Col>null</Col>
+                        <Col>{profileJoined}</Col>
                     </Row>     
                     <Row>
                         <Col>Birthday:</Col>
-                        <Col>null</Col>
+                        <Col>{profileBirthday}</Col>
                     </Row>                 
                 </Col>
             </Row>

@@ -7,7 +7,10 @@ import{
     doc,
     setDoc,
     getDoc,
+    getDocs,
     collection,
+    onSnapshot,
+    query,where,
 } from 'firebase/firestore';
 
 // import * as firebase from "firebase/app";
@@ -69,8 +72,8 @@ export const createUserDocumentFromAuth = async (userAuth:IuserAuth, additionalI
         const userDocRef=doc(db, 'users',userAuth.uid);
         console.log('userDocRef:',userDocRef);
         const userSnapshot= await getDoc(userDocRef);
-        console.log(userSnapshot);
-        console.log(userSnapshot.exists());
+        // console.log(userSnapshot);
+        // console.log(userSnapshot.exists());
         
         //checks if user doesn't exist
         //if user does exist on the database this code is ignored
@@ -78,13 +81,14 @@ export const createUserDocumentFromAuth = async (userAuth:IuserAuth, additionalI
         //into the database using the setDoc() function
         //setDoc() is async, takes 2 inputs, the ref and the data object to send
         if(!userSnapshot.exists()){
-            const{displayName, email}=userAuth;
+            const{displayName, email, uid}=userAuth;
             const createdAt = new Date();
             try{
                 await setDoc(userDocRef,{
                     displayName,
                     email,
                     createdAt,
+                    uid,
                     ...additionalInformation,
                 });
             }catch(error){
@@ -96,3 +100,66 @@ export const createUserDocumentFromAuth = async (userAuth:IuserAuth, additionalI
     }
     // return userDocRef;
 }
+
+
+
+
+
+
+
+
+// const colRef=collection(db,'users')
+// getDocs(colRef).then((snapshot)=>{
+//     console.log(snapshot.docs)
+//     let data:any= [];
+//     snapshot.docs.forEach((doc)=>{
+//         data.push({
+//             ...doc.data(),
+//             id: doc.id,
+//         })
+//     })
+//     console.log(data);
+// })
+
+// const getProfileData=(auth:any)=>{
+//     const userDocRef=doc(db, 'users',auth.uid);
+//     console.log('userDocRef:',userDocRef);
+// }
+// getProfileData(auth);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const getProfileRef=(auth:any)=>{
+//     const colRef=collection(db,'users');
+//     const q=query(colRef, where("uid","==",auth.uid));
+//     return q;
+// }
+
+
+
+
+// const colRef=collection(db,'users');
+// const q=query(colRef, where("uid","==",auth.uid));
+// onSnapshot(getProfileRef(auth),(snapshot)=>{
+//     let data:any= [];
+//     snapshot.docs.forEach((doc)=>{
+//         data.push({
+//             ...doc.data(),
+//             id: doc.id,
+//         })
+//     })
+//     console.log("Data Retrieved: ",data);
+// })

@@ -1,6 +1,7 @@
 import {navReducer} from './reducers/reducer_navigation';
 import {registerReducer} from './reducers/reducer_register';
 import {profileReducer} from './reducers/reducer_profile';
+
 import { configureStore } from '@reduxjs/toolkit'
 
 const store = configureStore({

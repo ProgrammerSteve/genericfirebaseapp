@@ -11,17 +11,15 @@ import {
 
     //Navigation constants
     CHANGE_NAVIGATION,
-  } from "./constants";
+  } from "../constants";
+
 
 
 
 
 // setNavigation("/route")
 // alters page state
-const setNavigation=(text:string)=>({
-    type:CHANGE_NAVIGATION,
-    payload: text
-})
+
 const setEmail=(text:string)=>({
   type:CHANGE_REGISTER_EMAIL,
   payload: text
@@ -57,7 +55,6 @@ const resetRegister=()=>({
 })
 
 export {
-  setNavigation,
   setEmail,
   setPass,
   setConfirm,

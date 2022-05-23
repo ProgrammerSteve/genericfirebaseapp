@@ -30,19 +30,19 @@ export const profileReducer=(state:IstateProfile=initialStateProfile,action:Iact
     switch(action.type){
 
         case CHANGE_PROFILE_EMAIL:
-            return Object.assign({},state, {R_Email: action.payload});
+            return Object.assign({},state, {P_Email: action.payload});
 
         case CHANGE_PROFILE_USERNAME:
-            return Object.assign({},state, {R_Pass: action.payload});
+            return Object.assign({},state, {P_Username: action.payload});
 
         case CHANGE_PROFILE_NAME:
-            return Object.assign({},state, {R_Confirm: action.payload});
+            return Object.assign({},state, {P_Name: action.payload});
 
         case CHANGE_PROFILE_BIRTHDAY:
-            return Object.assign({},state, {R_Username: action.payload});
+            return Object.assign({},state, {P_Birthday: action.payload});
 
         case CHANGE_PROFILE_JOINED:
-            return Object.assign({},state, {R_Name: action.payload});
+            return Object.assign({},state, {P_Joined: action.payload});
 
     default:
         return state;

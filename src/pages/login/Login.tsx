@@ -19,9 +19,7 @@ import {
     Link
   } from 'react-router-dom';
 
-  import {auth} from '../../firebase-utils';
-
-
+import {auth,db} from '../../firebase-utils';
 
 import {
     getAuth, 
@@ -31,12 +29,62 @@ import {
 } from 'firebase/auth'
 
 
+
+
+import{
+    doc,
+    setDoc,
+    getDoc,
+    getDocs,
+    collection,
+    onSnapshot,
+    query,where,
+} from 'firebase/firestore';
+
+
+
+
+
+
+
+import{
+    setProfileEmail,
+    setProfileUsername,
+    setProfileName,
+    setProfileBirthday,
+    setProfileJoined,
+  } from '../../redux/actions/actions-pro';
+
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+
+
+
+
+
+
+
+
+
 import './Login.css';
 
 function Login() {
+
+
+
+    const dispatch=useAppDispatch();
+    const profileEmail=useAppSelector((state)=>state.pro.P_Email);
+    const profileUsername=useAppSelector((state)=>state.pro.P_Username);
+    const profileName=useAppSelector((state)=>state.pro.P_Name);
+    const profileBirthday=useAppSelector((state)=>state.pro.P_Birthday);
+    const profileJoined=useAppSelector((state)=>state.pro.P_Joined);
+
+
+
+
+
+
     const navigate= useNavigate();
     const [authing,setAuthing]=useState(false);
-
 
 
 
@@ -54,25 +102,47 @@ function Login() {
         })
     }
 
-
-
-
     const signInWithEmail=async()=>{
         setAuthing(true);
         signInWithEmailAndPassword(auth, Email, Pass)
         .then(resp=>{
             console.log('Logging in:')
-            console.log(resp.user.uid);
+            const colRef=collection(db,'users');
+            const q=query(colRef, where("uid","==",resp.user.uid));
+            onSnapshot(q,(snapshot)=>{
+                let data:any= [];
+                snapshot.docs.forEach((doc)=>{
+                    data.push({
+                        ...doc.data(),
+                        id: doc.id,
+                    })
+                })
+
+                // console.log("Data Retrieved: ",data[0]);
+                // console.log("Username: ",data[0].Username);
+                // console.log("Name: ",data[0].Name);
+                // console.log("Email: ",data[0].email);
+                // console.log("Joined: ",data[0].createdAt);
+                // console.log("Birthday: ",data[0].Birthday);
+                dispatch(setProfileEmail(data[0].email));
+                dispatch(setProfileUsername(data[0].Username));
+                dispatch(setProfileName(data[0].Name));
+                dispatch(setProfileJoined(data[0].createdAt.seconds));
+                dispatch(setProfileBirthday(data[0].Birthday));
+
+            })
+            // console.log(resp.user.uid);
             navigate('/')
+
+
+
+            
         })
         .catch(error=>{
             console.log(error);
             setAuthing(false);
         })
     }
-
-
-
 
   // const singUpWithEmailAndPassword=(auth)=>{
   //   if(error !== '') setError('')
@@ -93,7 +163,6 @@ function Login() {
     // console.log(auth)
     return(
         <>
-            
             <div id="Login-Bg-Div">
                 <div id="Login-Larger-Container">
                         <div id="Login-Container">
@@ -138,7 +207,7 @@ function Login() {
 
 
 
-                                <Button 
+                                {/* <Button 
                                     variant="primary" 
                                     type="submit"
                                     onClick={()=>signInWithGoogle()}
@@ -151,7 +220,7 @@ function Login() {
                                         height="18px" 
                                         width="auto"
                                     />
-                                </Button>                    
+                                </Button>                     */}
 
 
 

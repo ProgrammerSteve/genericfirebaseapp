@@ -15,13 +15,9 @@ import {
   import {auth} from '../../firebase-utils';
 import './Register.css';
 
-
-
-
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
 import{
-    setNavigation,
     setEmail,
     setPass,
     setConfirm,
@@ -29,10 +25,7 @@ import{
     setName,
     setBirthday,
     setJoined
-  } from '../../redux/actions';
-
-
-
+  } from '../../redux/actions/actions-reg';
 
 
 
@@ -51,16 +44,10 @@ const Register=()=> {
         } 
     }
 
-
     const navigate= useNavigate();
-
 
     const[registering, setRegistering]= useState<boolean>(false);
     const[error, setError]=useState<string>('');
-    // const[Email,setEmail]=useState<string>('');
-    // const[Pass,setPass]=useState<string>('');
-    // const[Confirm,setConfirm]=useState<string>('');
-
 
     const dispatch=useAppDispatch();
     const Email=useAppSelector((state)=>state.reg.R_Email);
@@ -78,10 +65,6 @@ const Register=()=> {
     const handleForm=(e:React.SyntheticEvent)=>{
         e.preventDefault();
     }
-
-    
-
-
 
     return(
         <>     
