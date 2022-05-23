@@ -27,10 +27,18 @@ const setProfileJoined=(text:string)=>({
     payload: text
 })
 
+const setProfileMessages=(messagetxt:string[])=>({
+    type:CHANGE_PROFILE_JOINED,
+    payload: messagetxt
+})
+
+
+
 export {
     setProfileEmail,
     setProfileUsername,
     setProfileName,
     setProfileBirthday,
     setProfileJoined,
+    setProfileMessages,
 }

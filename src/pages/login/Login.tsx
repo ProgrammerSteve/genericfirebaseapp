@@ -134,7 +134,7 @@ function Login() {
                 dispatch(setProfileEmail(data[0].email));
                 dispatch(setProfileUsername(data[0].Username));
                 dispatch(setProfileName(data[0].Name));
-                dispatch(setProfileJoined(data[0].createdAt.seconds));
+                dispatch(setProfileJoined(data[0].Joined));
                 dispatch(setProfileBirthday(data[0].Birthday));
                 dispatch(setUID(resp.user.uid));
                 console.log("UID: ",resp.user.uid);

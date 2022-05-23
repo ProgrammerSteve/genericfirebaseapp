@@ -4,6 +4,7 @@ import {
     CHANGE_PROFILE_NAME,
     CHANGE_PROFILE_BIRTHDAY,
     CHANGE_PROFILE_JOINED,
+    CHANGE_PROFILE_MESSAGES,
   } from "../constants";
 
   interface Iaction {
@@ -17,6 +18,7 @@ interface IstateProfile{
     P_Name:string;
     P_Birthday:string;
     P_Joined:string;
+    P_Messages:string[];
 }
 const initialStateProfile:IstateProfile={
   P_Email:'',
@@ -24,6 +26,7 @@ const initialStateProfile:IstateProfile={
   P_Name:'',
   P_Birthday:'',
   P_Joined:'',
+  P_Messages:[],
 }
 
 export const profileReducer=(state:IstateProfile=initialStateProfile,action:Iaction={})=>{
@@ -43,6 +46,8 @@ export const profileReducer=(state:IstateProfile=initialStateProfile,action:Iact
 
         case CHANGE_PROFILE_JOINED:
             return Object.assign({},state, {P_Joined: action.payload});
+        case CHANGE_PROFILE_MESSAGES:
+            return Object.assign({},state, {P_Messages: action.payload});
 
     default:
         return state;

@@ -49,15 +49,15 @@ const Register2=()=> {
     const Username=useAppSelector((state)=>state.reg.R_Username);
     const Name=useAppSelector((state)=>state.reg.R_Name);
     const Birthday=useAppSelector((state)=>state.reg.R_Birthday);
-    const Joined=useAppSelector((state)=>state.reg.R_Joined);
+
 
     const navigate= useNavigate();
     const[registering, setRegistering]= useState<boolean>(false);
     const[error, setError]=useState<string>('');
 
-interface Iauth{
-    user:IuserAuth;
-}
+// interface Iauth{
+//     user:IuserAuth;
+// }
 
 const handleSubmit= async (event:React.SyntheticEvent)=>{
     event.preventDefault();
@@ -66,13 +66,18 @@ const handleSubmit= async (event:React.SyntheticEvent)=>{
         return;
     }
     try{
-        const response:Iauth=await createAuthUserWithEmailAndPassword(Email,Pass);
-        console.log(response);
+        const response:any=await createAuthUserWithEmailAndPassword(Email,Pass);
+        console.log('Auth response:'); 
+        let Joined=`${response.user.metadata.creationTime}`;
+
+        
+
         await createUserDocumentFromAuth(response.user, 
             {
                 Username,
                 Name,
                 Birthday,
+                Joined,
             }
         );
         dispatch(resetRegister());
