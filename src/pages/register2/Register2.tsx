@@ -76,7 +76,7 @@ const handleSubmit= async (event:React.SyntheticEvent)=>{
             }
         );
         dispatch(resetRegister());
-        navigate('/');
+        navigate('/Login');
     }catch(error:any){
 
         if(error.code === 'auth/email-already-in-use'){
