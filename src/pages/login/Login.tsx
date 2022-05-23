@@ -45,7 +45,10 @@ import{
 
 
 
-
+import {
+    setNavigation,
+    setUID,
+} from '../../redux/actions/actions-nav';
 
 import{
     setProfileEmail,
@@ -77,6 +80,10 @@ function Login() {
     const profileName=useAppSelector((state)=>state.pro.P_Name);
     const profileBirthday=useAppSelector((state)=>state.pro.P_Birthday);
     const profileJoined=useAppSelector((state)=>state.pro.P_Joined);
+
+
+
+    const profile_uid=useAppSelector((state)=>state.nav.profile_uid);
 
 
 
@@ -129,6 +136,8 @@ function Login() {
                 dispatch(setProfileName(data[0].Name));
                 dispatch(setProfileJoined(data[0].createdAt.seconds));
                 dispatch(setProfileBirthday(data[0].Birthday));
+                dispatch(setUID(resp.user.uid));
+                console.log("UID: ",resp.user.uid);
 
             })
             // console.log(resp.user.uid);

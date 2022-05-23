@@ -118,7 +118,7 @@ const handleSubmit= async (event:React.SyntheticEvent)=>{
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Birthday</Form.Label>
                             <Form.Control 
-                                type="text" 
+                                type="date" 
                                 placeholder="Birthday"
                                 onChange={e=>dispatch(setBirthday(e.target.value))} 
                             />

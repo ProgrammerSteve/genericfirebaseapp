@@ -1,6 +1,8 @@
 
 //Nav Reducer
 export const CHANGE_NAVIGATION='CHANGE_NAVIGATION';
+export const CHANGE_UID='CHANGE_UID';
+export const CHANGE_TAB='CHANGE_TAB';
 
 //Register Reducer
 export const CHANGE_REGISTER_EMAIL="CHANGE_REGISTER_EMAIL";
@@ -14,7 +16,6 @@ export const RESET_REGISTER="RESET_REGISTER";
 
 
 
-export const CHANGE_NAME='CHANGE_NAME';
 export const CHANGE_ONLINE_STATUS='CHANGE_ONLINE_STATUS';
 
 

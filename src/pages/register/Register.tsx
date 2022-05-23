@@ -66,6 +66,16 @@ const Register=()=> {
         e.preventDefault();
     }
 
+    const handleBtn=()=>{
+        if(Pass!==Confirm){
+            alert('Passwords do not match...');
+            return;
+        }else{
+            navigate('/Register2');
+            return;
+        }
+    }
+
     return(
         <>     
         <div id='Register-Bg-Div'>
@@ -95,7 +105,7 @@ const Register=()=> {
                                 />
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Group className="mb-3" controlId="formBasicConfirm">
                                 <Form.Label>Confirm Password</Form.Label>
                                 <Form.Control 
                                     type="password" 
@@ -112,7 +122,7 @@ const Register=()=> {
                                 variant="primary" 
                                 type="submit"
                                 // onClick={handleRegister}
-                                onClick={()=>navigate('/Register2')}
+                                onClick={()=>handleBtn()}
                             >
                                 Continue
                             </Button>

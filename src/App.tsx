@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import { useState} from 'react';
 
-
 import { 
   Container, 
   Row, 
@@ -16,9 +15,7 @@ import {
   Button 
 } from 'react-bootstrap';
 
-
 import { auth } from './firebase-utils';
-
 import AuthRoute from './components/AuthRoute/AuthRoute';
 
 
@@ -27,7 +24,6 @@ import {
   createUserWithEmailAndPassword, 
   GoogleAuthProvider 
 } from "firebase/auth";
-
 
 import { 
   BrowserRouter as Router, 
@@ -42,8 +38,6 @@ import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 
 function App() {
-
-
   return (
     <div className="App">
 

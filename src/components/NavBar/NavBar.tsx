@@ -10,7 +10,14 @@ import{
     setProfileName,
     setProfileBirthday,
     setProfileJoined,
-  } from '../../redux/actions/actions-pro';
+} from '../../redux/actions/actions-pro';
+
+
+import {
+    setNavigation,
+    setUID,
+    setTab,
+} from '../../redux/actions/actions-nav';
 
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
@@ -25,6 +32,8 @@ const NavBar = () => {
     const profileName=useAppSelector((state)=>state.pro.P_Name);
     const profileBirthday=useAppSelector((state)=>state.pro.P_Birthday);
     const profileJoined=useAppSelector((state)=>state.pro.P_Joined);
+
+    const tab=useAppSelector((state)=>state.nav.profile_tab);
   
   return(
 
@@ -32,9 +41,39 @@ const NavBar = () => {
             id="homeNav"
         >
             <div id="navBtns">
-                <div id="profile">Profile</div>
-                <div id="messages">Messages</div>
-                <div id="settings">Settings</div>
+                <div 
+                    id="profile"
+                    onClick={()=>
+                        {
+                            dispatch(setTab("profile"));
+                        }
+                    }
+                >
+                    Profile
+                </div>
+                <div 
+                    id="messages"
+                    onClick={()=>
+                        {
+                            dispatch(setTab("messaging"));
+                        }
+                    }
+                >
+                    Messages
+                </div>
+                <div 
+                    id="settings"
+                    onClick={()=>
+                        {
+                            dispatch(setTab("settings"));
+                        }
+                    }
+                >
+                    Settings
+                </div>                
+
+
+
             </div>
 
             <div
@@ -46,6 +85,7 @@ const NavBar = () => {
                     dispatch(setProfileName(""));
                     dispatch(setProfileJoined(""));
                     dispatch(setProfileBirthday(""));
+                    dispatch(setTab("profile"));
 
                     signOut(auth);
                     console.log("Signed Out..");
