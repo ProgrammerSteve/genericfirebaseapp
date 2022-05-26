@@ -22,17 +22,12 @@ import {
 import {useState} from 'react';
 import "./Home.css";
 
-
-
 import{getAuth, signOut} from 'firebase/auth';
 import {auth} from '../../firebase-utils';
-
 
 import NavBar from '../../components/NavBar/NavBar';
 import Profile from '../../components/profile/profile';
 import Messaging from '../../components/Messaging/Messaging';
-
-
 
 import {
     setNavigation,
@@ -49,12 +44,6 @@ import{
   } from '../../redux/actions/actions-pro';
 
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-
-
-
-
-
-
 
 const Home=()=>{
     
@@ -74,7 +63,6 @@ const Home=()=>{
                 return;
         }
     }
-
 
 
     return(

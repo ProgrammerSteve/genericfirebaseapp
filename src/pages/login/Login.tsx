@@ -113,8 +113,10 @@ function Login() {
         setAuthing(true);
         signInWithEmailAndPassword(auth, Email, Pass)
         .then(resp=>{
-            console.log('Logging in:')
+            console.log('Logging in:');
+            console.log('LogIn: ', resp.user.uid);
             const colRef=collection(db,'users');
+
             const q=query(colRef, where("uid","==",resp.user.uid));
             onSnapshot(q,(snapshot)=>{
                 let data:any= [];
@@ -140,7 +142,7 @@ function Login() {
                 console.log("UID: ",resp.user.uid);
 
             })
-            // console.log(resp.user.uid);
+            console.log(resp.user.uid);
             navigate('/')
 
 
